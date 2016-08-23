@@ -1,0 +1,27 @@
+{
+  "name": "aws-elasticsearch-proxy",
+  "version": "1.0.0",
+  "description": "This is a package for configuring a proxy to elasticsearch for allowing a private interface.",
+  "main": "index.js",
+  "scripts": {
+    "start": "SERVER=search-production-applicationlogs-4ulcuuwlrfn4r27jo6lw5xk5wi.us-east-1.es.amazonaws.com node index.js"
+  },
+  "keywords": [
+    "aws",
+    "elasticsearch",
+    "proxy",
+    "amazon",
+    "elasticsearchservice",
+    "internal"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.2.35",
+    "express": "^4.13.4",
+    "http": "^0.0.0",
+    "http-proxy": "^1.13.1",
+    "body-parser": "^1.15.0",
+    "stream": "^0.0.2"
+  },
+  "author": "John Delivuk",
+  "license": "MIT"
+}

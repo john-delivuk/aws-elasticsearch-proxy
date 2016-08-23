@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: utils.log.proxy
+    version: v1.0
+  name: utils.log.proxy
+  namespace: utils
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        env: dev
+        app: utils.log.proxy
+    spec:
+      imagePullSecrets:
+      - name: innroad
+      containers:
+      - name: utils-log-proxy
+        image: jdelivuk/aws-elasticsearch-proxy
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+          name: http
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          value: 
+        - name: AWS_SECRET_ACCESS_KEY
+          value: 
+        - name: SERVER
+          value: 
